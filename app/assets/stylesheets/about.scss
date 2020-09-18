@@ -1,0 +1,21 @@
+.about-section {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  margin-left:50px; 
+  margin-right:50px;
+  margin-top:20px;
+  
+  .about-name {
+    font-size:1.5em;
+    font-weight:800;    
+  }
+
+  .about-text {
+    width:60%;
+    p {
+      font-size: 1.3em;
+      font-weight:500;
+    }
+  }
+}
