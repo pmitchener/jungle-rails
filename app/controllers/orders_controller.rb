@@ -1,7 +1,13 @@
 class OrdersController < ApplicationController
 
   def show
-    @order = Order.find(params[:id])
+    
+    @order = Order.find(params[:id]) 
+    hsh = {}
+    @order.line_items.each do |item|
+      hsh[item.product_id.to_s] = item.quantity
+    end
+    @enhanced_order = Product.where(id: hsh.keys).map {|product| { product:product, quantity: hsh[product.id.to_s] } }
   end
 
   def create
@@ -30,7 +36,7 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_subtotal_cents,
-      description: "Khurram Virani's Jungle Order",
+      description: "Patrick Mitchener's Jungle Order",
       currency:    'cad'
     )
   end
