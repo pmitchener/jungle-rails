@@ -11,6 +11,13 @@
   <%= render 'layouts/top_nav' %>
 
   <main class="container">
+    <% # the active_sale? method will be automatically picked up from SalesHelper module located in helpers/sales_helper.rb file. %>
+    <% if active_sale? %>
+      <p class="alert alert-info">
+        There's and active <%= "Back to school" %> sale going on!
+        <strong>Everything is <%= 15 %>% off!</strong>
+      </p>
+    <% end %>
     <%= yield %>
   </main>
 

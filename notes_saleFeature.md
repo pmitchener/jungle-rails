@@ -4,6 +4,6 @@
   * starts_on (date)
   * ends_on (date)
 
-* Once any sale is active, display it on the home page and affect the prices
+* Once any sale is active, display it on any page and affect the prices
 
 * use EDD - Error Driven Development
