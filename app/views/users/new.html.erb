@@ -1,12 +1,41 @@
 <h1>Signup!</h1>
 
 <%= form_for :user, url: '/users' do |f| %>
+  <div class="row">
+    <div class="form-group col-lg-3">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: 'form-control input-sm' %>
+    </div>
+  </div>
 
-  First Name: <%= f.text_field :first_name %>
-  Last Name:  <%= f.text_field :last_name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+  <div class="row">
+    <div class="form-group col-lg-3">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, class: 'form-control input-sm' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-lg-3">
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control input-sm' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-lg-3">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control input-sm' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-lg-3">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'form-control input-sm' %>
+    </div>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-primary mb-2" %>
 
 <% end %>
