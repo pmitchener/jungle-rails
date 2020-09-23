@@ -16,8 +16,7 @@
       Details &raquo;
     <% end %>
   </footer>
-
-  <% if product.quantity === 0 %>
+  <% if !product_available? {product.name} %>
   <aside class="soldout">
     Sold out!
   </aside>
