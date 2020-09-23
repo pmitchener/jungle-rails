@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
 
    # not exactly sure of the mechanics here. I think application.controller.authorize.
-  before_filter :authorize
+  before_filter :authorize, :except => [:add_item]
 
   def show
   end
